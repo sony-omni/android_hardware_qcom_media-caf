@@ -93,15 +93,15 @@ include $(CLEAR_VARS)
 
 libmm-venc-inc      += $(LOCAL_PATH)/inc
 libmm-venc-inc      += $(OMX_VIDEO_PATH)/vidc/common/inc
-libmm-venc-inc      += hardware/qcom/media-caf-bfam/mm-core/inc
-libmm-venc-inc      += hardware/qcom/media-caf-bfam/libstagefrighthw
-libmm-venc-inc      += hardware/qcom/display-caf-bfam/libgralloc
+libmm-venc-inc      += hardware/qcom/media-caf/mm-core/inc
+libmm-venc-inc      += hardware/qcom/media-caf/libstagefrighthw
+libmm-venc-inc      += hardware/qcom/display-caf/libgralloc
 libmm-venc-inc      += frameworks/native/include/media/hardware
 libmm-venc-inc      += frameworks/native/include/media/openmax
-libmm-venc-inc      += hardware/qcom/media-caf-bfam/libc2dcolorconvert
-libmm-venc-inc      += hardware/qcom/display-caf-bfam/libcopybit
+libmm-venc-inc      += hardware/qcom/media-caf/libc2dcolorconvert
+libmm-venc-inc      += hardware/qcom/display-caf/libcopybit
 libmm-venc-inc      += frameworks/av/include/media/stagefright
-libmm-venc-inc      += $(TARGET_OUT_HEADERS)/qcom/display-caf-bfam/
+libmm-venc-inc      += $(TARGET_OUT_HEADERS)/qcom/display-caf/
 libmm-venc-inc      += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 
 LOCAL_MODULE                    := libOmxVenc
@@ -137,8 +137,8 @@ include $(CLEAR_VARS)
 mm-venc-test720p-inc            := $(TARGET_OUT_HEADERS)/mm-core
 mm-venc-test720p-inc            += $(LOCAL_PATH)/inc
 mm-venc-test720p-inc            += $(OMX_VIDEO_PATH)/vidc/common/inc
-mm-venc-test720p-inc            += hardware/qcom/media-caf-bfam/mm-core/inc
-mm-venc-test720p-inc            += hardware/qcom/display-caf-bfam/libgralloc
+mm-venc-test720p-inc            += hardware/qcom/media-caf/mm-core/inc
+mm-venc-test720p-inc            += hardware/qcom/display-caf/libgralloc
 mm-venc-test720p-inc            += $(venc-inc)
 mm-venc-test720p-inc            += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 
@@ -164,14 +164,14 @@ include $(BUILD_EXECUTABLE)
 include $(CLEAR_VARS)
 
 venc-test-inc                   += $(LOCAL_PATH)/inc
-venc-test-inc                   += hardware/qcom/display-caf-bfam/libgralloc
+venc-test-inc                   += hardware/qcom/display-caf/libgralloc
 venc-test-inc                   += $(venc-inc)
 venc-test-inc                   += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 
 LOCAL_MODULE                    := mm-video-encdrv-test
 LOCAL_MODULE_TAGS               := optional
 LOCAL_C_INCLUDES                := $(venc-test-inc)
-LOCAL_C_INCLUDES                += hardware/qcom/media-caf-bfam/mm-core/inc
+LOCAL_C_INCLUDES                += hardware/qcom/media-caf/mm-core/inc
 
 LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 LOCAL_PRELINK_MODULE            := false

@@ -112,29 +112,29 @@ LOCAL_PATH:= $(ROOT_DIR)
 
 libmm-vdec-inc          += $(LOCAL_PATH)/inc 
 libmm-vdec-inc          += $(OMX_VIDEO_PATH)/vidc/common/inc
-libmm-vdec-inc          += hardware/qcom/media-caf-bfam/mm-core/inc
+libmm-vdec-inc          += hardware/qcom/media-caf/mm-core/inc
 libmm-vdec-inc          += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 #DRM include - Interface which loads the DRM library
 libmm-vdec-inc	        += $(OMX_VIDEO_PATH)/DivxDrmDecrypt/inc
-libmm-vdec-inc          += hardware/qcom/display-caf-bfam/libgralloc
+libmm-vdec-inc          += hardware/qcom/display-caf/libgralloc
 libmm-vdec-inc          += frameworks/native/include/media/openmax
 libmm-vdec-inc          += frameworks/native/include/media/hardware
 libmm-vdec-inc          += $(vdec-inc)
-libmm-vdec-inc          += hardware/qcom/display-caf-bfam/libqdutils
-libmm-vdec-inc      += hardware/qcom/media-caf-bfam/libc2dcolorconvert
-libmm-vdec-inc      += hardware/qcom/display-caf-bfam/libcopybit
+libmm-vdec-inc          += hardware/qcom/display-caf/libqdutils
+libmm-vdec-inc      += hardware/qcom/media-caf/libc2dcolorconvert
+libmm-vdec-inc      += hardware/qcom/display-caf/libcopybit
 libmm-vdec-inc      += frameworks/av/include/media/stagefright
 libmm-vdec-inc      += $(TARGET_OUT_HEADERS)/mm-video/SwVdec
 
 ifeq ($(PLATFORM_SDK_VERSION), 18)  #JB_MR2
 libOmxVdec-def += -DANDROID_JELLYBEAN_MR2=1
-libmm-vdec-inc += hardware/qcom/media-caf-bfam/libstagefrighthw
+libmm-vdec-inc += hardware/qcom/media-caf/libstagefrighthw
 endif
-libmm-vdec-inc      += $(TARGET_OUT_HEADERS)/qcom/display-caf-bfam/
+libmm-vdec-inc      += $(TARGET_OUT_HEADERS)/qcom/display-caf/
 
 ifneq ($(call is-platform-sdk-version-at-least, 19),true)
 libOmxVdec-def += -DMETADATA_FOR_DYNAMIC_MODE
-libmm-vdec-inc += hardware/qcom/media-caf-bfam/libstagefrighthw
+libmm-vdec-inc += hardware/qcom/media-caf/libstagefrighthw
 endif
 
 ifeq ($(call is-platform-sdk-version-at-least, 19),true)
@@ -162,7 +162,7 @@ ifneq (,$(filter msm8974 msm8610 msm8226 apq8084 mpq8092 msm_bronze msm8916,$(TA
 LOCAL_SRC_FILES         += src/omx_vdec_msm8974.cpp
 else
 LOCAL_SHARED_LIBRARIES  += libhardware
-libmm-vdec-inc          += hardware/qcom/display-caf-bfam/libhwcomposer
+libmm-vdec-inc          += hardware/qcom/display-caf/libhwcomposer
 LOCAL_SRC_FILES         += src/power_module.cpp
 LOCAL_SRC_FILES         += src/omx_vdec.cpp
 endif
@@ -225,7 +225,7 @@ endif
 # ---------------------------------------------------------------------------------
 include $(CLEAR_VARS)
 
-mm-vdec-test-inc    := hardware/qcom/media-caf-bfam/mm-core/inc
+mm-vdec-test-inc    := hardware/qcom/media-caf/mm-core/inc
 mm-vdec-test-inc    += $(LOCAL_PATH)/inc
 mm-vdec-test-inc    += $(vdec-inc)
 mm-vdec-test-inc    += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
@@ -249,7 +249,7 @@ include $(BUILD_EXECUTABLE)
 # ---------------------------------------------------------------------------------
 include $(CLEAR_VARS)
 
-mm-vdec-drv-test-inc    := hardware/qcom/media-caf-bfam/mm-core/inc
+mm-vdec-drv-test-inc    := hardware/qcom/media-caf/mm-core/inc
 mm-vdec-drv-test-inc    += $(LOCAL_PATH)/inc
 mm-vdec-drv-test-inc    += $(vdec-inc)
 mm-vdec-drv-test-inc    += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
